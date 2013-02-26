@@ -5,7 +5,7 @@ exports.myFunction = function(params, callback) {
   }
   callback(undefined, {result: num});
 };
-exports.myFunctionRed = function(callback) {
+exports.myFunctionRed = function(params, callback) {
     return callback({err: 'Num too large'});
 
 };
