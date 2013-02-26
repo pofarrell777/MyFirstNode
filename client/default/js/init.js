@@ -39,10 +39,7 @@ $fh.ready(function() {
     // See: http://docs.feedhenry.com/wiki/Actions
     $fh.act(
       {
-        act:'myFunction',
-        req: {
-          num: rand
-        }
+        act:'myFunction'
       },
 
       function(err,msg) {
@@ -58,10 +55,7 @@ $fh.ready(function() {
     // See: http://docs.feedhenry.com/wiki/Actions
     $fh.act(
       {
-        act:'myFunction',
-        req: {
-          num: rand
-        }
+        act:'myFunction'
       },
       function(res) {
         document.getElementById('cloudConfig').innerHTML = "<p>" + JSON.stringify(res) + "</p>";
