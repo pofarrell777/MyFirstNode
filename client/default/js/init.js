@@ -33,4 +33,41 @@ $fh.ready(function() {
       }
     );
   };
+  document.getElementById('run_button_red').onclick = function() {
+    
+   // Invoke a cloud action call to get the remote configuration
+    // See: http://docs.feedhenry.com/wiki/Actions
+    $fh.act(
+      {
+        act:'myFunction',
+        req: {
+          num: rand
+        }
+      },
+
+      function(err,msg) {
+        document.getElementById('cloudConfig').innerHTML = "<p>ERROR: " + JSON.stringify(msg.error) + "</p>";
+        //alert('An error occured: ' + code + ' : ' + errorprops);
+      }
+    );
+  };
+
+  document.getElementById('run_button_green').onclick = function() {
+    
+   // Invoke a cloud action call to get the remote configuration
+    // See: http://docs.feedhenry.com/wiki/Actions
+    $fh.act(
+      {
+        act:'myFunction',
+        req: {
+          num: rand
+        }
+      },
+      function(res) {
+        document.getElementById('cloudConfig').innerHTML = "<p>" + JSON.stringify(res) + "</p>";
+        //alert(res);
+      }
+    );
+  };
+
 });
