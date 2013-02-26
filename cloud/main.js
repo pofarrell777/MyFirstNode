@@ -6,7 +6,8 @@ exports.myFunction = function(params, callback) {
   callback(undefined, {result: num});
 };
 exports.myFunctionRed = function(params, callback) {
-    return callback({err: 'Num too large'});
+  var num = params.num;
+    return callback({err: 'Num too large'}, {result: num});
 
 };
 exports.myFunctionGreen = function(params, callback) {
